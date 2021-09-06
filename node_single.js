@@ -23,7 +23,7 @@ async function runTestWithCaps () {
     .usingServer('http://'+username+':'+accessKey+'@hub-cloud.browserstack.com/wd/hub')
     .withCapabilities(capabilities)
     .build();
-  await driver.get("http://localhost:8888");
+  //await driver.get("http://localhost:8888");
 
   await driver.get("http://www.google.com");
   const inputField = await driver.findElement(webdriver.By.name("q"));
@@ -44,6 +44,6 @@ async function runTestWithCaps () {
       'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Page could not load in time"}}'
     );
   }
-  await driver.quit();
+  //await driver.quit();
 }
 runTestWithCaps(); 
